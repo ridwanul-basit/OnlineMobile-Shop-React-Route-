@@ -22,10 +22,10 @@ const Router = createBrowserRouter([
               element: <Home></Home> ,
             },
             {
-                path: "/category/:id",
+            path: "/category/:id",
               element: <CategoryNews></CategoryNews> ,
-              hydrateFallbackElement : <Loading></Loading>,
               loader: ()=> fetch("/public/news.json"),
+              hydrateFallbackElement : <Loading></Loading>
             }
 
 

@@ -8,17 +8,18 @@ const CategoryNews = () => {
     const [categoryNews, setCategoryNews] = useState([])
 
     useEffect(()=>{
-        if(id=="0"){
+        if(id =="0"){
             setCategoryNews(data)
             return;
 
         }else if (id=="1") {
-            const filterData = data.filter(news=> news.others.is_today_pick == true);
-         setCategoryNews(filterData)
+         const filterData = data.filter(news=> news.others.is_today_pick == true);
+         setCategoryNews(filterData);
          return;
 
 
-        }else{
+        }
+        else{
             const filterData = data.filter(news=> news.category_id == id);
         setCategoryNews(filterData)
 
