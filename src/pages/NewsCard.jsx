@@ -1,8 +1,10 @@
 import React from 'react';
 import { format } from 'date-fns';
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     author,
     rating,
@@ -49,7 +51,7 @@ const NewsCard = ({ news }) => {
 
         {/* Details */}
         <p className="text-sm text-gray-700">
-          {details.length > 200 ?  <>{details.slice(0, 200)}...<span className='text-primary font-bold'>Read More</span></> : details}
+          {details.length > 200 ?  <>{details.slice(0, 200)}...<Link to={`/news-details/${id}`} className='text-primary font-bold'>Read More</Link></> : details}
         </p>
 
         {/* Tags */}
